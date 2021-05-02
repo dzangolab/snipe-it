@@ -57,6 +57,10 @@ fi
 
 exec supervisord -c /supervisord.conf
 
+if [ "${SESSION_DRIVER}" == "database"]; then
+  php artisan session:table
+fi
+
 php artisan migrate --force
 php artisan config:clear
 php artisan config:cache
