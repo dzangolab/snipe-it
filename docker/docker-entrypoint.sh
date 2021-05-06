@@ -99,6 +99,10 @@ then
   cp -a /var/www/html/vendor/laravel/passport/database/migrations/* /var/www/html/database/migrations/
 fi
 
+if [ "${SESSION_DRIVER}" == "database" ]; then
+  cp -a /var/www/html/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub /var/www/html/database/migrations/create_sessions_table.php
+fi
+
 # Create laravel log file
 touch /var/www/html/storage/logs/laravel.log
 # Add correct permissions for files and directories
