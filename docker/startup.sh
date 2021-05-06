@@ -72,8 +72,8 @@ fi
 
 exec supervisord -c /supervisord.conf
 
-if [ "${SESSION_DRIVER}" == "database"]; then
-  php artisan session:table
+if [ "${SESSION_DRIVER}" == "database" ]; then
+  cp -ax /var/www/html/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub /var/www/html/database/migrations/create_sessions_table.php
 fi
 
 php artisan migrate --force
