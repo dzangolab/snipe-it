@@ -46,7 +46,7 @@ then
 fi
 
 if [ "${SESSION_DRIVER}" == "database" ]; then
-  cp -a /var/www/html/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub /var/www/html/database/migrations/2021_05_06_0000_create_sessions_table.php
+  cp -a /var/www/html/vendor/laravel/framework/src/Illuminate/Session/Console/stubs/database.stub /var/www/html/database/migrations/2021_05_06_000001_create_sessions_table.php
 fi
 
 php artisan migrate --force
