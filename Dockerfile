@@ -99,6 +99,7 @@ RUN \
       && chown docker "/var/lib/snipeit/keys/" \
       && chown -h docker "/var/www/html/storage/" \
       && chmod +x /var/www/html/artisan \
+      && chmod 777 /var/www/html/storage/ \
       && echo "Finished setting up application in /var/www/html"
 
 ############## DEPENDENCIES via COMPOSER ###################
